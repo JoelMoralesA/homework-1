@@ -5,7 +5,7 @@ body {
  
 .container {
     display: block;
-    
+    width: 600px;
     margin: 20px auto;
 }
 h1 {
@@ -16,3 +16,4 @@ h1 {
 #searchMovie {
     color: white;
 }
+
