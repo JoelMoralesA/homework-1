@@ -12,11 +12,15 @@
 669ca14c
 http://www.omdbapi.com/?apikey=669ca14c
 
-http://www.omdbapi.com/?apikey=669ca14c&s=star&y=1990
-koden ovan söker efter filmer/serier med titlar "star" från 1990
+http://www.omdbapi.com/?apikey=669ca14c&i=
 
 
-http://www.omdbapi.com/?apikey=669ca14c + (sökkommando) + & + 
+
+NÄST SISTA (första API parameter)
+http://www.omdbapi.com/?apikey=669ca14c&s=Rogue%20One:%20A%20Star%20Wars&Y=2017
+
+SISTA FILMEN (andra API parametern)
+http://www.omdbapi.com/?apikey=669ca14c&s=Star%20Wars:%20Episode%20IX&type=movie
 
 
 */
@@ -36,52 +40,24 @@ http://www.omdbapi.com/?apikey=669ca14c + (sökkommando) + & +
 * Example with parameter s=star trek AND type=series
 * http://www.omdbapi.com/?apikey=[yourkey]&s=star trek&type=2020
 *
-*/
+
 //let url = 'http://www.omdbapi.com/?apikey=[yourkey]=star trek';
-
-//snappa upp API,input, knapp och tomma listan från html
-let baseUrl = 'http://www.omdbapi.com/';
-let apiKey = '?apikey=669ca14c';
-let input = document.getElementById("title");
-let button = document.getElementById("searchBtn");
-let list = document.getElementById("result");
+*/
 
 
-//skapa funktion som hämtar data från API samt kollar om kontakt med server är upprätthållen
-//i första .then blocket. i andra .then blocket splitta datan så man får strings och sätt ut dom på den tomma listan i html.
-function fetchData () {
-   let url = baseUrl + apiKey + input;
-    fetch(url)
-    .then((response) => {
-        if (!response.ok) {
-            throw new Error('Something wrong with the request');
-        }
 
-        return response.text();
-    })
-    .then((data) => {
-        let words = data.split(',')
 
-        for (let word of words) {
-            list.innerHTML += '<li>' + word + '</li>';
-        }
-    })
-    .catch((error) => {
-        console.log(error);
-    })
+//==========LÖSNING============
+
+//Skapar en function som hämtar url + value från de olika titlarna som syns i HTML
+//samt länka dessa till dom tomma "div"sen samt tomma img i HTML
+
+function showMovie(sw) {
+    var url = "http://www.omdbapi.com/?apikey=669ca14c&i=" + sw,
+
+    //hämta ny data när man ändrar film bland alternativen
+    dataRequest = new XMLHttpRequest(),
+    
+
+
 }
-
-
-//När man trycker på knappen, använd fetchData funktionen
-button.addEventListener('click', fetchData);
-
-/*
-
-    .then((response) => {
-        if (!response.ok) {
-        throw new Error('Something wrong with the request');
-        }
-        
-    })
-
-    */
