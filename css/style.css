@@ -1,14 +1,37 @@
 body {
     background-color: gray;
-    
+    height: 100%;
+    width: 50%;
+    margin-left: 100px;
 }
 
 h1 {
     text-align: center;
-    color: white;
+    color: #ffffff;
+}
+h2 {
+    color: greenyellow;
 }
 
 #label {
     color: white;
+    font-size: 20px;
 }
 
+#p1 {
+    font-size: 20px;
+    color: white;
+}
+
+#p2 {
+    font-size: 20px;
+   
+}
+
+#movies {
+    margin-bottom: 20px;
+}
+#p3 {
+    font-size: 40px;
+    color: red;
+}
